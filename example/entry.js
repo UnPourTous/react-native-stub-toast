@@ -16,16 +16,16 @@ export default class example extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => {
-          Toast.show('This is a Toast')
-        }}>
+        <TouchableHighlight
+          onPress={() => {
+            Toast.show('This is a Toast')
+          }}>
           <Text>Show Toast</Text>
         </TouchableHighlight>
 
         {/* Set PopupStub and Init Toast */}
         <PopupStub ref={component => {
-          this._popupStub = component
-          Toast.init(this._popupStub)
+          Toast.init(component)
         }} />
       </View>
     )
