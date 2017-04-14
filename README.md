@@ -7,7 +7,7 @@ A Toast component which can be called with static function but does not need to 
 
 ## Installation 
 ```
-npm install react-native-stub-toast --save
+npm install @unpourtous/react-native-stub-toast --save
 ```
 
 ## Usage
