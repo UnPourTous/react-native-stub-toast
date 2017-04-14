@@ -1,6 +1,6 @@
 {
   "name": "@unpourtous/react-native-stub-toast",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "react native component for both Android and iOS",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,11 @@
     "react-native"
   ],
   "author": "erichua",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnPourTous/react-native-stub-toast.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-jest": "18.0.0",
