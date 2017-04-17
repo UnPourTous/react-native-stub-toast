@@ -8,12 +8,19 @@ import React, { Component } from 'react'
 
 export default class Toast extends Component {
   static _popupStub
+  static showingToast = []
 
   static init (popupStub) {
     Toast._popupStub = popupStub
   }
 
   static show (msg, duration) {
+    // prevent duplicate msg
+    if (Toast.showingToast.indexOf(msg) !== -1) {
+      return
+    }
+    Toast.showingToast.push(msg)
+
     const id = Toast._popupStub.addPopup(
       <View style={styles.content}>
         <Text style={styles.text}>{msg}</Text>
@@ -22,6 +29,9 @@ export default class Toast extends Component {
 
     setTimeout(() => {
       Toast._popupStub.removePopup(id)
+      Toast.showingToast = Toast.showingToast.filter((item) => {
+        return item !== msg
+      })
     }, duration || 1000)
   }
 }
