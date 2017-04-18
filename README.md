@@ -22,6 +22,7 @@ export default class example extends Component {
           onPress={() => {
             // Step three: Use Toast with static function
             Toast.show('This is a Toast')
+            Toast.show('This is a another Toast')
           }}>
           <Text>Show Toast</Text>
         </TouchableHighlight>
