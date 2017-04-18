@@ -3,7 +3,7 @@
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)  
   
 ## Introduction 
-A Toast component which can be called with static function but does not need to be added <Tosat /> every.
+A Toast component which can be called with static function, It does not need to add `<Tosat />` every page.
 
 ## Installation 
 ```
