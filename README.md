@@ -37,7 +37,7 @@ export default class example extends Component {
     )
   }
 }
-
-
-
 ```
+
+## License
+This library is distributed under MIT Licence.
