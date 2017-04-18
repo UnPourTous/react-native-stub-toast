@@ -4,35 +4,48 @@ import {
   Text
 } from 'react-native'
 
+import * as Animatable from 'react-native-animatable';
+
 import React, { Component } from 'react'
 
 export default class Toast extends Component {
   static _popupStub
-  static showingToast = []
+  static _toastQueue = []
+  static _isToastShowing = false
 
   static init (popupStub) {
     Toast._popupStub = popupStub
   }
 
   static show (msg, duration) {
-    // prevent duplicate msg
-    if (Toast.showingToast.indexOf(msg) !== -1) {
-      return
+    const toast = {
+      msg,
+      duration
     }
-    Toast.showingToast.push(msg)
-
+    if (Toast._isToastShowing) {
+      Toast._toastQueue.push(toast)
+    } else {
+      Toast._toastQueue.push(toast)
+      Toast._showToastQueue()
+    }
+  }
+  static _showToastQueue () {
+    const toast = Toast._toastQueue.shift()
+    Toast._isToastShowing = true
     const id = Toast._popupStub.addPopup(
-      <View style={styles.content}>
-        <Text style={styles.text}>{msg}</Text>
-      </View>
+      <Animatable.View animation="fadeIn" style={styles.content}>
+        <Text style={styles.text}>{toast.msg}</Text>
+      </Animatable.View>
     )
 
     setTimeout(() => {
       Toast._popupStub.removePopup(id)
-      Toast.showingToast = Toast.showingToast.filter((item) => {
-        return item !== msg
-      })
-    }, duration || 1000)
+      if (Toast._toastQueue.length > 0) {
+        Toast._showToastQueue()
+      } else {
+        Toast._isToastShowing = false
+      }
+    }, toast.duration || 1000)
   }
 }
 

@@ -19,6 +19,7 @@ export default class example extends Component {
         <TouchableHighlight
           onPress={() => {
             Toast.show('This is a Toast')
+            Toast.show('==========This is a Toast2')
           }}>
           <Text>Show Toast</Text>
         </TouchableHighlight>
