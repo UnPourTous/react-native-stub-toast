@@ -51,7 +51,10 @@ export default class Toast extends Component {
 
 const styles = StyleSheet.create({
   content: {
-    width: 178,
+    minWidth: 178,
+    maxWidth: 220,
+    paddingLeft: 10,
+    paddingRight: 10,
     paddingTop: 10,
     paddingBottom: 10,
     alignItems: 'center',
