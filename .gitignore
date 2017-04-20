@@ -3,4 +3,5 @@ node_modules/
 example/node_modules/
 example/ios/build/
 .idea/
+npm-debug.log
 

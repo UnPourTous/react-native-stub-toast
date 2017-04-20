@@ -68,7 +68,6 @@ export default class PopupStub extends Component {
     return (
       <View
         {...this.props}
-        pointerEvents={'none'}
         style={{
           position: 'absolute',
           top: 0,
