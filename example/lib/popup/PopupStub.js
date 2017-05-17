@@ -8,9 +8,16 @@ import React, { Component } from 'react'
 const uuidV1 = require('uuid/v1');
 
 export default class PopupStub extends Component {
+  static _popupStub = null
+
+  static init (popupStub) {
+    if (popupStub) Toast._popupStub = popupStub
+  }
+
   state = {
     popups: new Map()
   }
+
   static propTypes = {
     ...View.propTyps
   }
