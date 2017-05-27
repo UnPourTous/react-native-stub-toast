@@ -11,7 +11,7 @@ export default class PopupStub extends Component {
   static _popupStub = null
 
   static init (popupStub) {
-    if (popupStub) Toast._popupStub = popupStub
+    if (popupStub) PopupStub._popupStub = popupStub
   }
 
   state = {
@@ -22,13 +22,16 @@ export default class PopupStub extends Component {
     ...View.propTyps
   }
 
+  getNewId() {
+    return uuidV1()
+  }
   /**
    *
    * @param element return unique id
    */
-  addPopup (element) {
+  addPopup (element, customId) {
     const newPopups = this.state.popups
-    const id = uuidV1()
+    const id = customId || uuidV1()
     newPopups.set(id, element)
     this.setState({
       popups: newPopups
