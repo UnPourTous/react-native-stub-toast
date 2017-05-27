@@ -10,5 +10,5 @@ git commit
 
 version=v$1
 git tag version
-npm publish --access public --tag $version --verbose
+npm publish --access public --verbose
 git push --tag
