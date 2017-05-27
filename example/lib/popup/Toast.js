@@ -4,7 +4,7 @@ import {
   Text
 } from 'react-native'
 
-import * as Animatable from 'react-native-animatable';
+import * as Animatable from 'react-native-animatable'
 
 import React, { Component } from 'react'
 
@@ -32,10 +32,12 @@ export default class Toast extends Component {
   static _showToastQueue () {
     const toast = Toast._toastQueue.shift()
     Toast._isToastShowing = true
-    const id = Toast._popupStub.addPopup(
-      <Animatable.View animation="fadeIn" style={styles.content}>
+    const id = Toast._popupStub.getNewId()
+    Toast._popupStub.addPopup(
+      <Animatable.View animation='fadeIn' style={styles.content}>
         <Text style={styles.text}>{toast.msg}</Text>
-      </Animatable.View>
+      </Animatable.View>,
+      id
     )
 
     setTimeout(() => {
