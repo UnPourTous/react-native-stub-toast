@@ -14,6 +14,11 @@ export default class PopupStub extends Component {
     if (popupStub) PopupStub._popupStub = popupStub
   }
 
+  static isShow () {
+    return PopupStub._popupStub && PopupStub._popupStub.state &&
+      PopupStub._popupStub.state.popups && PopupStub._popupStub.state.popups.size > 0
+  }
+
   state = {
     popups: new Map()
   }
