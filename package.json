@@ -1,6 +1,6 @@
 {
   "name": "@unpourtous/react-native-stub-toast",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "react native component for both Android and iOS",
   "main": "index.js",
   "scripts": {
