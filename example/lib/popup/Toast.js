@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
   content: {
     minWidth: 178,
     maxWidth: 220,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 25,
+    paddingRight: 25,
     paddingTop: 10,
     paddingBottom: 10,
     alignItems: 'center',
